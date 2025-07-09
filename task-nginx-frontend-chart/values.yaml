@@ -1,0 +1,52 @@
+nginx:
+  enabled: true
+
+  service:
+    type: ClusterIP
+
+  ingress:
+    enabled: true
+    hostname: radio.local
+    annotations:
+      kubernetes.io/ingress.class: nginx
+      nginx.ingress.kubernetes.io/ssl-redirect: "false"
+
+    ingressClassName: nginx
+
+    extraRules:
+      - host: radio.local
+        http:
+          paths:
+            - path: /
+              pathType: Prefix
+              backend:
+                service:
+                  name: nginx-frontend
+                  port:
+                    number: 80
+
+      - host: radio.local
+        annotations:
+          nginx.ingress.kubernetes.io/rewrite-target: /$1
+          nginx.ingress.kubernetes.io/use-regex: "true"
+          nginx.ingress.io/ssl-redirect: "false"
+        http:
+          paths:
+            - path: /images/(.*)
+              pathType: ImplementationSpecific
+              backend:
+                service:
+                  name: task-minio
+                  port:
+                    number: 9000
+
+  extraVolumes:
+    - name: custom-html
+      configMap:
+        name: nginx-frontend-html-config
+
+  extraVolumeMounts:
+    - name: custom-html
+      mountPath: /usr/share/nginx/html/index.html
+      subPath: index.html
+      readOnly: true

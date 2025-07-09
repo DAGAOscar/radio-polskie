@@ -1,0 +1,6 @@
+dependencies:
+- name: minio
+  repository: https://charts.bitnami.com/bitnami
+  version: 17.0.9
+digest: sha256:6fede0f3338559bbb87a90d2dbffb2332076620ccdc79219cbc67bba8bb40b18
+generated: "2025-07-09T00:53:50.1528072+02:00"

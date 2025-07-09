@@ -1,0 +1,8 @@
+minio:
+  enabled: true
+
+  auth:
+    rootUser: "task-admin"
+    rootPassword: "task123!"
+
+  defaultBuckets: "task-minio-bucket"
