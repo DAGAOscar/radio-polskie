@@ -69,6 +69,8 @@ helm install nginx-ingress ./task-nginx-ingress-chart
  ![image](https://github.com/user-attachments/assets/f40e2493-4479-4cdd-90d1-9552f1a088d6)
 - K3S cluster with at least 1 server and 2 agents. HA expansion (more servers, embedded etcd, load balancer).
 ![image](https://github.com/user-attachments/assets/662058ff-1627-4812-914e-215e6e5f9711)
+<img width="918" height="166" alt="image" src="https://github.com/user-attachments/assets/4c087073-9451-4801-9adf-ade68ea9a5a0" />
+
 
 
 ---
