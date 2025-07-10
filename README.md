@@ -62,6 +62,15 @@ helm install nginx-ingress ./task-nginx-ingress-chart
 - Deploys the Nginx Ingress Controller (`ingress-nginx-4.13.0.tgz`).
 - Can be configured to route traffic to the frontend service.
 
+### Scren
+- Rancher Desktop (Container Runtime: dockerd)
+  ![image](https://github.com/user-attachments/assets/43e81d6c-12df-4f2a-932c-6c7bfd33d8a0)
+
+ ![image](https://github.com/user-attachments/assets/f40e2493-4479-4cdd-90d1-9552f1a088d6)
+- K3S cluster with at least 1 server and 2 agents. HA expansion (more servers, embedded etcd, load balancer).
+![image](https://github.com/user-attachments/assets/662058ff-1627-4812-914e-215e6e5f9711)
+
+
 ---
 
 For more advanced usage, refer to the official Helm and Kubernetes documentation.
